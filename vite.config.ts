@@ -41,12 +41,11 @@ export default defineConfig({
     chunkSizeWarningLimit: 2000,
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'three-vendor': ['three', '@react-three/fiber', '@react-three/drei'],
-          'chart-vendor': ['recharts'],
-          'motion-vendor': ['framer-motion'],
-          'store-vendor': ['zustand']
+        manualChunks(id) {
+          if (id.includes('three') || id.includes('@react-three')) return 'three-vendor'
+          if (id.includes('recharts') || id.includes('d3-')) return 'chart-vendor'
+          if (id.includes('framer-motion')) return 'motion-vendor'
+          if (id.includes('react-dom') || id.includes('react-router')) return 'react-vendor'
         }
       }
     }
