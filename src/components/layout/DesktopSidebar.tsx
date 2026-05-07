@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils'
 import {
   LayoutDashboard, Wallet, UtensilsCrossed, Wifi,
   Activity, MapPin, Shirt, ListChecks, ShieldAlert,
-  AlertTriangle, Anchor
+  AlertTriangle, Anchor, Navigation
 } from 'lucide-react'
 import { DarkModeToggle } from '@/components/ui/DarkModeToggle'
 import { OfflineStatusBadge } from '@/components/ui/OfflineStatusBadge'
@@ -20,6 +20,7 @@ const navItems = [
   { to: '/packing', icon: ListChecks, label: 'Packing List' },
   { to: '/avoid', icon: AlertTriangle, label: 'Avoid List' },
   { to: '/emergency', icon: ShieldAlert, label: 'Emergency Rules' },
+  { to: '/navigation', icon: Navigation, label: 'Cabin Navigator' },
 ]
 
 export function DesktopSidebar() {

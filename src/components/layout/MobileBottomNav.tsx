@@ -2,7 +2,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { cn } from '@/lib/utils'
 import {
   LayoutDashboard, Wallet, UtensilsCrossed,
-  Activity, MapPin
+  MapPin, Navigation
 } from 'lucide-react'
 
 const navItems = [
@@ -10,7 +10,7 @@ const navItems = [
   { to: '/budget', icon: Wallet, label: 'Budget' },
   { to: '/food', icon: UtensilsCrossed, label: 'Food' },
   { to: '/ports', icon: MapPin, label: 'Ports' },
-  { to: '/activities', icon: Activity, label: 'Activities' },
+  { to: '/navigation', icon: Navigation, label: 'Navigate' },
 ]
 
 export function MobileBottomNav() {

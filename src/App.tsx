@@ -11,6 +11,7 @@ import { Clothing } from '@/pages/Clothing'
 import { PackingList } from '@/pages/PackingList'
 import { AvoidList } from '@/pages/AvoidList'
 import { EmergencyRules } from '@/pages/EmergencyRules'
+import { CabinNavigatorPage } from '@/pages/CabinNavigatorPage'
 import { useStore } from '@/store/useStore'
 
 export default function App() {
@@ -59,6 +60,7 @@ export default function App() {
           <Route path="/packing" element={<PackingList />} />
           <Route path="/avoid" element={<AvoidList />} />
           <Route path="/emergency" element={<EmergencyRules />} />
+          <Route path="/navigation" element={<CabinNavigatorPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
