@@ -5,15 +5,6 @@ import { embarkationSteps } from '@/data/navigation'
 import { useStore } from '@/store/useStore'
 import { cn } from '@/lib/utils'
 
-const typeColors: Record<string, string> = {
-  arrival: 'text-sky-400',
-  document: 'text-violet-400',
-  luggage: 'text-amber-400',
-  security: 'text-red-400',
-  boarding: 'text-emerald-400',
-  cabin: 'text-blue-400',
-  safety: 'text-orange-400',
-}
 
 export function EmbarkationChecklist() {
   const { embarkationChecklist, toggleEmbarkationStep, getEmbarkationProgress } = useStore()

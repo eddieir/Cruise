@@ -1,7 +1,6 @@
 import { useState, useCallback, useEffect } from 'react'
 import { Navigation, MapPin, CheckCircle, AlertCircle, ExternalLink, Footprints, Car } from 'lucide-react'
 import { Card } from '@/components/ui/Card'
-import { Badge } from '@/components/ui/Badge'
 import { GPSStatusBadge } from './GPSStatusBadge'
 import { TERMINAL_COORDS, stationToTerminalSteps } from '@/data/navigation'
 import { useStore } from '@/store/useStore'

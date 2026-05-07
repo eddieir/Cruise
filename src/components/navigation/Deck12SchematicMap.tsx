@@ -20,7 +20,6 @@ const OFFICIAL_IMAGE_PATH = '/maps/msc-musica-deck-12.png'
 function SchematicSVG({ marker }: { marker: MarkerPosition | null }) {
   // Approximate schematic of Deck 12 corridor layout
   // Ship: long oval shape, corridor runs fore-aft, cabins on both sides
-  const cabinColor = (num: number) => num === 12049 ? '#22c55e' : '#334155'
   const cabinHighlight = (num: number) => num === 12049
 
   const portCabins = [12001, 12003, 12005, 12007, 12009, 12011, 12013, 12015, 12017, 12019, 12021, 12023, 12025, 12027, 12029, 12031, 12033, 12035, 12037, 12039, 12041, 12043, 12045, 12047, 12049, 12051, 12053, 12055]
