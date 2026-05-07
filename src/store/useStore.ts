@@ -40,6 +40,11 @@ interface AppState {
   dailyChecklist: DailyChecklist
   toggleDailyItem: (dayKey: string, itemId: string) => void
 
+  // Embarkation checklist
+  embarkationChecklist: CheckedItems
+  toggleEmbarkationStep: (stepId: string) => void
+  getEmbarkationProgress: () => { done: number; total: number }
+
   // Active page
   activePage: string
   setActivePage: (page: string) => void
@@ -118,6 +123,18 @@ export const useStore = create<AppState>()(
         })
       },
 
+      // Embarkation checklist
+      embarkationChecklist: {},
+      toggleEmbarkationStep: (stepId) => {
+        const prev = get().embarkationChecklist
+        set({ embarkationChecklist: { ...prev, [stepId]: !prev[stepId] } })
+      },
+      getEmbarkationProgress: () => {
+        const checked = get().embarkationChecklist
+        const done = Object.values(checked).filter(Boolean).length
+        return { done, total: 11 }
+      },
+
       // Navigation
       activePage: 'dashboard',
       setActivePage: (page) => set({ activePage: page }),
@@ -139,7 +156,8 @@ export const useStore = create<AppState>()(
         spending: state.spending,
         wifiOption: state.wifiOption,
         packingChecked: state.packingChecked,
-        dailyChecklist: state.dailyChecklist
+        dailyChecklist: state.dailyChecklist,
+        embarkationChecklist: state.embarkationChecklist
       })
     }
   )

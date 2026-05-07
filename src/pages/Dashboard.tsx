@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import {
   Wallet, UtensilsCrossed, Wifi, Activity,
   MapPin, ListChecks, AlertTriangle, ShieldAlert,
-  Anchor, Euro, AlertCircle
+  Anchor, Euro, AlertCircle, Navigation, BedDouble
 } from 'lucide-react'
 import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
@@ -15,6 +15,7 @@ import { BUDGET_TARGET, BUDGET_CEILING } from '@/data/budget'
 import { formatEuro } from '@/lib/utils'
 
 const quickLinks = [
+  { to: '/navigation', icon: Navigation, label: "Cabin Navigator", color: 'from-indigo-500 to-blue-600', desc: 'Find Cabin 12049 · GPS guide' },
   { to: '/budget', icon: Wallet, label: "Budget Tracker", color: 'from-sky-500 to-blue-600', desc: 'Track every euro' },
   { to: '/food', icon: UtensilsCrossed, label: "Food Plan", color: 'from-emerald-500 to-teal-600', desc: 'Day-by-day meals' },
   { to: '/activities', icon: Activity, label: "Free Activities", color: 'from-violet-500 to-purple-600', desc: 'Free vs paid onboard' },
@@ -80,6 +81,24 @@ export function Dashboard() {
             </div>
           </div>
         </div>
+      </motion.div>
+
+      {/* Find Cabin CTA */}
+      <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
+        <Link to="/navigation">
+          <div className="flex items-center gap-4 rounded-2xl bg-gradient-to-r from-indigo-600/80 to-blue-700/80 border border-indigo-500/40 p-4 hover:from-indigo-600 hover:to-blue-700 transition-all">
+            <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center shrink-0">
+              <BedDouble size={24} className="text-white" />
+            </div>
+            <div className="flex-1">
+              <p className="font-bold text-white text-base">Find Cabin 12049</p>
+              <p className="text-indigo-200 text-xs mt-0.5">GPS guide · Embarkation checklist · Deck 12 map</p>
+            </div>
+            <div className="text-white/60">
+              <Navigation size={20} />
+            </div>
+          </div>
+        </Link>
       </motion.div>
 
       {/* Warning Banner */}
