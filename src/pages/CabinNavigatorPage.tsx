@@ -1,10 +1,9 @@
 import { useState, type ReactNode } from 'react'
 import { motion } from 'framer-motion'
-import { Navigation, BedDouble, ListChecks, Map, Compass, Shield, ChevronDown, ChevronUp, Euro } from 'lucide-react'
+import { Navigation, BedDouble, ListChecks, Map, Compass, Shield, ChevronDown, ChevronUp, Euro, Wifi, WifiOff } from 'lucide-react'
 import { Card } from '@/components/ui/Card'
 import { Badge } from '@/components/ui/Badge'
 import { QuickCabinCard } from '@/components/navigation/QuickCabinCard'
-import { GPSStatusBadge } from '@/components/navigation/GPSStatusBadge'
 import { OutsideTerminalMap } from '@/components/navigation/OutsideTerminalMap'
 import { EmbarkationChecklist } from '@/components/navigation/EmbarkationChecklist'
 import { IndoorCabinGuide } from '@/components/navigation/IndoorCabinGuide'
@@ -131,7 +130,15 @@ export function CabinNavigatorPage() {
               <Badge variant="green">Cruise Paid ✓</Badge>
             </div>
 
-            <GPSStatusBadge gpsAvailable={null} isOnline={isOnline} />
+            <div className={cn(
+              'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium border',
+              isOnline
+                ? 'bg-sky-500/20 border-sky-500/40 text-sky-300'
+                : 'bg-orange-500/20 border-orange-500/40 text-orange-300'
+            )}>
+              {isOnline ? <Wifi size={11} /> : <WifiOff size={11} />}
+              {isOnline ? 'Online — maps available' : 'Offline — schematic mode'}
+            </div>
 
             {/* Quick cabin pills */}
             <div className="flex flex-wrap gap-2 mt-4">
