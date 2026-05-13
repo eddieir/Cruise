@@ -15,7 +15,7 @@ import { BUDGET_TARGET, BUDGET_CEILING } from '@/data/budget'
 import { formatEuro } from '@/lib/utils'
 
 const quickLinks = [
-  { to: '/navigation', icon: Navigation, label: "Cabin Navigator", color: 'from-indigo-500 to-blue-600', desc: 'Find Cabin 12049 · GPS guide' },
+  { to: '/navigation', icon: Navigation, label: "Cabin Navigator", color: 'from-indigo-500 to-blue-600', desc: 'Find Cabin 10142 · GPS guide' },
   { to: '/budget', icon: Wallet, label: "Budget Tracker", color: 'from-sky-500 to-blue-600', desc: 'Track every euro' },
   { to: '/food', icon: UtensilsCrossed, label: "Food Plan", color: 'from-emerald-500 to-teal-600', desc: 'Day-by-day meals' },
   { to: '/activities', icon: Activity, label: "Free Activities", color: 'from-violet-500 to-purple-600', desc: 'Free vs paid onboard' },
@@ -91,8 +91,8 @@ export function Dashboard() {
               <BedDouble size={24} className="text-white" />
             </div>
             <div className="flex-1">
-              <p className="font-bold text-white text-base">Find Cabin 12049</p>
-              <p className="text-indigo-200 text-xs mt-0.5">GPS guide · Embarkation checklist · Deck 12 map</p>
+              <p className="font-bold text-white text-base">Find Cabin 10142</p>
+              <p className="text-indigo-200 text-xs mt-0.5">GPS guide · Embarkation checklist · Deck 10 map</p>
             </div>
             <div className="text-white/60">
               <Navigation size={20} />

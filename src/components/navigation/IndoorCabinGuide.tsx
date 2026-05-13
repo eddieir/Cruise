@@ -32,7 +32,7 @@ export function IndoorCabinGuide() {
   return (
     <Card>
       <h3 className="font-bold text-white text-base mb-1 flex items-center gap-2">
-        🚢 Ship Entrance → Cabin 12049
+        🚢 Ship Entrance → Cabin 10142
       </h3>
 
       {/* GPS warning */}
@@ -98,7 +98,7 @@ export function IndoorCabinGuide() {
 
       {/* Reminder */}
       <div className="mt-4 bg-blue-500/10 border border-blue-500/30 rounded-xl p-3 text-xs text-blue-200">
-        <span className="font-semibold">Remember:</span> Cabin 12049 is on Deck 12 (Ponte 12). The luggage tag on your checked bags also shows Ponte 12 / Cabina 12049 — confirm they match before handing bags to porters.
+        <span className="font-semibold">Remember:</span> Cabin 10142 is on Deck 10 (Ponte 10). The luggage tag on your checked bags also shows Ponte 10 / Cabina 10142 — confirm they match before handing bags to porters.
       </div>
     </Card>
   )

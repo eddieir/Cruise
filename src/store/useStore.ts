@@ -1,6 +1,8 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import { budgetCategories, BUDGET_TARGET, BUDGET_CEILING } from '@/data/budget'
+import { embarkationSteps } from '@/data/navigation'
+import { packingCategories } from '@/data/packingList'
 
 interface SpendingEntry {
   categoryId: string
@@ -107,7 +109,8 @@ export const useStore = create<AppState>()(
       getPackingProgress: () => {
         const checked = get().packingChecked
         const done = Object.values(checked).filter(Boolean).length
-        return { done, total: 0 }
+        const total = packingCategories.flatMap(c => c.items).length
+        return { done, total }
       },
 
       // Daily checklist
@@ -132,7 +135,7 @@ export const useStore = create<AppState>()(
       getEmbarkationProgress: () => {
         const checked = get().embarkationChecklist
         const done = Object.values(checked).filter(Boolean).length
-        return { done, total: 11 }
+        return { done, total: embarkationSteps.length }
       },
 
       // Navigation

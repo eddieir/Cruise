@@ -23,15 +23,15 @@ export interface RouteMode {
 }
 
 export const CABIN_INFO = {
-  number: '12049',
-  deck: 12,
-  deckItalian: 'Ponte 12',
+  number: '10142',
+  deck: 10,
+  deckItalian: 'Ponte 10',
   ship: 'MSC Musica',
-  musterPoint: 'C',
+  musterPoint: 'F',
   checkInOpens: '14:00',
   departure: '18:00',
   disembarkation: '02/06/2026',
-  type: 'Balcony / Partial-View Balcony',
+  type: 'BA — Cabina esterna con balcone (Balcony)',
   experience: 'Fantastica',
   dinner: 'Primo Turno (First Sitting)',
   passengers: ['Peyman Iravani', 'Mozhgan Nami Seghinsara'],
@@ -81,7 +81,7 @@ export const embarkationSteps: EmbarkationStep[] = [
     id: 'luggage-labels',
     step: 4,
     title: 'Hand over checked luggage with labels',
-    detail: 'Attach printed luggage labels (Ponte 12 / Cabina 12049) before handing bags to porters. Bags will be delivered to your cabin.',
+    detail: 'Attach printed luggage labels (Ponte 10 / Cabina 10142) before handing bags to porters. Bags will be delivered to your cabin.',
     icon: '🧳',
     type: 'luggage'
   },
@@ -112,8 +112,8 @@ export const embarkationSteps: EmbarkationStep[] = [
   {
     id: 'find-cabin',
     step: 8,
-    title: 'Go to Cabin 12049 if cabins are ready',
-    detail: 'Cabins are usually ready from 14:30–15:00 onward. Head to Deck 12 / Ponte 12. If not ready, explore the ship.',
+    title: 'Go to Cabin 10142 if cabins are ready',
+    detail: 'Cabins are usually ready from 14:30–15:00 onward. Head to Deck 10 / Ponte 10. If not ready, explore the ship.',
     icon: '🛏️',
     type: 'cabin'
   },
@@ -136,8 +136,8 @@ export const embarkationSteps: EmbarkationStep[] = [
   {
     id: 'muster-point',
     step: 11,
-    title: 'Remember Muster Point C',
-    detail: 'Your assigned muster station is Point C. Learn its location during the drill. In an emergency, go directly to Muster Point C.',
+    title: 'Remember Muster Point F',
+    detail: 'Your assigned muster station is Point F. Learn its location during the drill. In an emergency, go directly to Muster Point F.',
     icon: '📍',
     type: 'safety'
   },
@@ -152,10 +152,10 @@ export const routeModes: RouteMode[] = [
     steps: [
       { id: 'e1', instruction: 'Board ship via gangway (approx. Deck 4–5)', detail: 'Follow crew directions. You will enter a reception/atrium area.', type: 'landmark' },
       { id: 'e2', instruction: 'Follow signs to elevator lobby', detail: 'Look for "Ascensori / Elevators" signs with up/down arrows on the walls.', type: 'walk' },
-      { id: 'e3', instruction: 'Take elevator to Deck 12 / Ponte 12', detail: 'Press button 12. Multiple elevators available. May be busy at embarkation — wait patiently.', type: 'elevator' },
-      { id: 'e4', instruction: 'Exit elevator and check corridor signs', detail: 'Signs on the wall will show cabin number ranges: e.g. "12001–12050 →" or "← 12001–12050".', type: 'landmark' },
-      { id: 'e5', instruction: 'Follow signs toward 12049', detail: 'Cabin 12049 is odd-numbered — check which side of the corridor odd numbers are on. Follow arrows.', type: 'walk' },
-      { id: 'e6', instruction: 'Stop at Cabin 12049', detail: 'Verify the number on the door matches 12049. Double-check!', type: 'arrive' },
+      { id: 'e3', instruction: 'Take elevator to Deck 10 / Ponte 10', detail: 'Press button 10. Multiple elevators available. May be busy at embarkation — wait patiently.', type: 'elevator' },
+      { id: 'e4', instruction: 'Exit elevator and check corridor signs', detail: 'Signs on the wall will show cabin number ranges: e.g. "10101–10150 →" or "← 10101–10150".', type: 'landmark' },
+      { id: 'e5', instruction: 'Follow signs toward 10142', detail: 'Cabin 10142 is even-numbered — check which side of the corridor even numbers are on (starboard side). Follow arrows.', type: 'walk' },
+      { id: 'e6', instruction: 'Stop at Cabin 10142', detail: 'Verify the number on the door matches 10142. Double-check!', type: 'arrive' },
       { id: 'e7', instruction: 'Collect Cruise Card from door envelope', detail: 'Your Cruise Card should be in an envelope attached to the door. Take it immediately — it is your key.', type: 'info' },
     ]
   },
@@ -167,10 +167,10 @@ export const routeModes: RouteMode[] = [
     steps: [
       { id: 's1', instruction: 'Board ship via gangway (approx. Deck 4–5)', detail: 'Follow crew directions to the ship entrance.', type: 'landmark' },
       { id: 's2', instruction: 'Locate staircase (Scale / Stairs)', detail: 'Look for staircase signs near the elevator area. Central stairs span all decks.', type: 'walk' },
-      { id: 's3', instruction: 'Climb stairs to Deck 12', detail: 'If boarding at Deck 4, you need 8 flights. At Deck 5, you need 7 flights. Each flight = 1 deck.', type: 'stairs' },
-      { id: 's4', instruction: 'Exit staircase onto Deck 12 corridor', detail: 'Deck number is marked at each staircase landing. Confirm you are on Deck 12.', type: 'landmark' },
-      { id: 's5', instruction: 'Follow corridor signs to cabin 12049', detail: 'Look for cabin number range signs and follow arrows.', type: 'walk' },
-      { id: 's6', instruction: 'Arrive at Cabin 12049', detail: 'Check the door number. Collect Cruise Card from envelope on door.', type: 'arrive' },
+      { id: 's3', instruction: 'Climb stairs to Deck 10', detail: 'If boarding at Deck 4, you need 6 flights. At Deck 5, you need 5 flights. Each flight = 1 deck.', type: 'stairs' },
+      { id: 's4', instruction: 'Exit staircase onto Deck 10 corridor', detail: 'Deck number is marked at each staircase landing. Confirm you are on Deck 10.', type: 'landmark' },
+      { id: 's5', instruction: 'Follow corridor signs to cabin 10142', detail: 'Look for cabin number range signs and follow arrows.', type: 'walk' },
+      { id: 's6', instruction: 'Arrive at Cabin 10142', detail: 'Check the door number. Collect Cruise Card from envelope on door.', type: 'arrive' },
     ]
   },
   {
@@ -179,10 +179,10 @@ export const routeModes: RouteMode[] = [
     icon: '🧳',
     description: 'Luggage delivered separately — you travel light.',
     steps: [
-      { id: 'h1', instruction: 'Hand checked bags to porters at terminal', detail: 'Ensure luggage labels are attached showing: MSC Musica / Ponte 12 / Cabina 12049. Bags delivered to your cabin.', type: 'info' },
+      { id: 'h1', instruction: 'Hand checked bags to porters at terminal', detail: 'Ensure luggage labels are attached showing: MSC Musica / Ponte 10 / Cabina 10142. Bags delivered to your cabin.', type: 'info' },
       { id: 'h2', instruction: 'Board with hand luggage only', detail: 'Only carry your hand bag with documents, medicines, and valuables.', type: 'landmark' },
-      { id: 'h3', instruction: 'Use elevator to Deck 12', detail: 'With only hand luggage, elevator is comfortable. No need to rush.', type: 'elevator' },
-      { id: 'h4', instruction: 'Navigate to Cabin 12049 and wait for bags', detail: 'Bags typically arrive within 2–4 hours after embarkation. Do not worry if they are not there immediately.', type: 'arrive' },
+      { id: 'h3', instruction: 'Use elevator to Deck 10', detail: 'With only hand luggage, elevator is comfortable. No need to rush.', type: 'elevator' },
+      { id: 'h4', instruction: 'Navigate to Cabin 10142 and wait for bags', detail: 'Bags typically arrive within 2–4 hours after embarkation. Do not worry if they are not there immediately.', type: 'arrive' },
       { id: 'h5', instruction: 'If bags not arrived by dinner, contact Reception (Deck 5)', detail: 'Go to Guest Services if bags have not arrived by early evening.', type: 'warning' },
     ]
   },
@@ -193,9 +193,9 @@ export const routeModes: RouteMode[] = [
     description: 'For when you want to reach the cabin quickly.',
     steps: [
       { id: 'f1', instruction: 'Board and immediately turn toward mid-ship elevator', detail: 'Do not stop to explore. Go straight to the nearest elevator.', type: 'walk' },
-      { id: 'f2', instruction: 'Press 12 in elevator — go directly to Deck 12', detail: 'Skip any intermediate stops if possible.', type: 'elevator' },
-      { id: 'f3', instruction: 'Check sign at Deck 12 exit — turn toward 12049', detail: 'Signs will indicate which direction for 12001–12070 range.', type: 'landmark' },
-      { id: 'f4', instruction: 'Walk to Cabin 12049 — collect Cruise Card', detail: 'Job done. You can explore the ship after.', type: 'arrive' },
+      { id: 'f2', instruction: 'Press 10 in elevator — go directly to Deck 10', detail: 'Skip any intermediate stops if possible.', type: 'elevator' },
+      { id: 'f3', instruction: 'Check sign at Deck 10 exit — turn toward 10142', detail: 'Signs will indicate which direction for the 10101–10150 range (even/starboard side).', type: 'landmark' },
+      { id: 'f4', instruction: 'Walk to Cabin 10142 — collect Cruise Card', detail: 'Job done. You can explore the ship after.', type: 'arrive' },
     ]
   },
   {
@@ -206,8 +206,8 @@ export const routeModes: RouteMode[] = [
     steps: [
       { id: 'a1', instruction: 'Request crew assistance at gangway if needed', detail: 'MSC crew can assist with wheelchair, mobility aids, or if you need extra time.', type: 'info' },
       { id: 'a2', instruction: 'Use elevator only — avoid stairs', detail: 'Accessible elevators are available. Take your time — no rush.', type: 'elevator' },
-      { id: 'a3', instruction: 'Ask crew if unsure of direction on Deck 12', detail: 'Crew are stationed throughout the ship during embarkation and will help you.', type: 'walk' },
-      { id: 'a4', instruction: 'Arrive at Cabin 12049 at your own pace', detail: 'Collect Cruise Card. If you need anything, call Reception: press 0 on cabin phone.', type: 'arrive' },
+      { id: 'a3', instruction: 'Ask crew if unsure of direction on Deck 10', detail: 'Crew are stationed throughout the ship during embarkation and will help you.', type: 'walk' },
+      { id: 'a4', instruction: 'Arrive at Cabin 10142 at your own pace', detail: 'Collect Cruise Card. If you need anything, call Reception: press 0 on cabin phone.', type: 'arrive' },
     ]
   },
 ]

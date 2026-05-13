@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback } from 'react'
 import { Navigation, MapPin, CheckCircle, AlertCircle, ExternalLink, Footprints, Car } from 'lucide-react'
 import { Card } from '@/components/ui/Card'
 import { GPSStatusBadge } from './GPSStatusBadge'
@@ -69,29 +69,26 @@ function OfflineRouteDiagram({ locationStatus }: { locationStatus: LocationStatu
 export function OutsideTerminalMap() {
   const { isOnline } = useStore()
   const [gpsAvailable, setGpsAvailable] = useState<boolean | null>(null)
+  const [gpsChecking, setGpsChecking] = useState(false)
   const [coords, setCoords] = useState<{ lat: number; lng: number } | null>(null)
   const [locationStatus, setLocationStatus] = useState<LocationStatus>('none')
   const [distanceToTerminal, setDistanceToTerminal] = useState<number | null>(null)
   const [gpsError, setGpsError] = useState<string | null>(null)
   const [luggage, setLuggage] = useState<'light' | 'heavy'>('light')
 
-  useEffect(() => {
-    if (!navigator.geolocation) {
-      setGpsAvailable(false)
-    } else {
-      setGpsAvailable(null)
-    }
-  }, [])
-
   const requestGPS = useCallback(() => {
     if (!navigator.geolocation) {
       setGpsAvailable(false)
+      setGpsChecking(false)
       setGpsError('Geolocation is not supported by your browser.')
       return
     }
+    setGpsChecking(true)
+    setGpsError(null)
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         const { latitude, longitude } = pos.coords
+        setGpsChecking(false)
         setGpsAvailable(true)
         setCoords({ lat: latitude, lng: longitude })
         setGpsError(null)
@@ -104,6 +101,7 @@ export function OutsideTerminalMap() {
         else setLocationStatus('en-route')
       },
       (err) => {
+        setGpsChecking(false)
         setGpsAvailable(false)
         if (err.code === 1) setGpsError('GPS permission denied. Allow location access and try again.')
         else if (err.code === 2) setGpsError('GPS signal unavailable. Using offline schematic mode.')
@@ -144,7 +142,7 @@ export function OutsideTerminalMap() {
         GPS works outside the ship. Use this section to navigate from Genova Piazza Principe station to the cruise terminal.
       </p>
 
-      <GPSStatusBadge gpsAvailable={gpsAvailable} isOnline={isOnline} className="mb-4" />
+      <GPSStatusBadge gpsAvailable={gpsAvailable} isOnline={isOnline} checking={gpsChecking} className="mb-4" />
 
       {/* Status badge */}
       <div className={cn('flex items-center gap-2 px-3 py-2 rounded-xl border text-sm font-medium mb-4', statusColors[locationStatus])}>
