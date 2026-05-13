@@ -24,7 +24,7 @@ export function CabinToShipLocations() {
         🗺️ Cabin → Key Ship Locations
       </h3>
       <p className="text-xs text-[hsl(var(--muted-foreground))] mb-2">
-        From Cabin 12049 (Deck 12), how to reach each area. Based on typical MSC Musica layout — verify with onboard signage.
+        From Cabin 10142 (Deck 10), how to reach each area. Based on typical MSC Musica layout — verify with onboard signage.
       </p>
 
       <div className="flex items-start gap-2 bg-blue-500/10 border border-blue-500/20 rounded-xl p-2.5 mb-4">

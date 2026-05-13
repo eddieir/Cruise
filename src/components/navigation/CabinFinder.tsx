@@ -15,9 +15,9 @@ function parseCabin(cabin: string): { deck: number | null; range: string; action
 }
 
 export function CabinFinder() {
-  const [input, setInput] = useState('12049')
+  const [input, setInput] = useState('10142')
   const result = parseCabin(input)
-  const isOurs = input.trim() === '12049'
+  const isOurs = input.trim() === '10142'
 
   return (
     <Card>
@@ -34,7 +34,7 @@ export function CabinFinder() {
           inputMode="numeric"
           value={input}
           onChange={e => setInput(e.target.value)}
-          placeholder="e.g. 12049"
+          placeholder="e.g. 10142"
           className="w-full bg-white/5 border border-white/15 rounded-xl px-4 py-3 text-white text-lg font-bold placeholder-[hsl(var(--muted-foreground))] focus:outline-none focus:border-sky-500/60 focus:bg-sky-500/5 transition-all"
         />
         {isOurs && (
@@ -65,7 +65,7 @@ export function CabinFinder() {
             }
             <div>
               {isOurs ? (
-                <p className="text-xs text-emerald-200 font-medium">This is your assigned cabin. Go to Deck 12, follow signs for cabins 12031–12070, then locate 12049 on the odd-number (port) side of the corridor.</p>
+                <p className="text-xs text-emerald-200 font-medium">This is your assigned cabin. Go to Deck 10, follow signs for cabins 10071+, then locate 10142 on the even-number (starboard) side of the corridor.</p>
               ) : (
                 <p className="text-xs text-blue-200">Go to Deck {result.deck} via elevator or stairs. Follow corridor signs for the {result.range} cabin range.</p>
               )}
@@ -75,7 +75,7 @@ export function CabinFinder() {
       ) : (
         <div className="flex items-center gap-2 bg-red-500/10 border border-red-500/30 rounded-xl p-3">
           <AlertCircle size={14} className="text-red-400 shrink-0" />
-          <p className="text-xs text-red-300">Enter a valid cabin number (e.g. 12049, 7022, 9130).</p>
+          <p className="text-xs text-red-300">Enter a valid cabin number (e.g. 10142, 7022, 9130).</p>
         </div>
       )}
 

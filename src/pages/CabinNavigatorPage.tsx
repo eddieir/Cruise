@@ -20,10 +20,10 @@ const sections: { id: SectionId; label: string; icon: ReactNode; desc: string }[
   { id: 'cabin-card', label: 'Cabin Info', icon: <BedDouble size={15} />, desc: 'Your quick cabin reference card' },
   { id: 'outside-map', label: 'Station → Terminal', icon: <Navigation size={15} />, desc: 'GPS & offline route to cruise port' },
   { id: 'embarkation', label: 'Embarkation Steps', icon: <ListChecks size={15} />, desc: 'Step-by-step boarding checklist' },
-  { id: 'indoor-guide', label: 'Ship → Cabin', icon: <Compass size={15} />, desc: 'Indoor guide to Cabin 12049' },
-  { id: 'deck-map', label: 'Deck 12 Map', icon: <Map size={15} />, desc: 'Visual schematic of Deck 12' },
+  { id: 'indoor-guide', label: 'Ship → Cabin', icon: <Compass size={15} />, desc: 'Indoor guide to Cabin 10142' },
+  { id: 'deck-map', label: 'Deck 10 Map', icon: <Map size={15} />, desc: 'Visual schematic of Deck 10' },
   { id: 'cabin-finder', label: 'Cabin Finder', icon: <BedDouble size={15} />, desc: 'Find any cabin by number' },
-  { id: 'ship-locations', label: 'Ship Locations', icon: <Map size={15} />, desc: 'Key places from Cabin 12049' },
+  { id: 'ship-locations', label: 'Ship Locations', icon: <Map size={15} />, desc: 'Key places from Cabin 10142' },
   { id: 'safety', label: 'Safety Rules', icon: <Shield size={15} />, desc: 'Emergency signals & rules' },
   { id: 'budget-summary', label: 'Budget Summary', icon: <Euro size={15} />, desc: 'Trip cost overview' },
 ]
@@ -124,8 +124,8 @@ export function CabinNavigatorPage() {
                   <Navigation size={18} className="text-sky-300" />
                   <span className="text-sky-300 text-sm font-medium">Cabin Navigator</span>
                 </div>
-                <h1 className="text-2xl font-black text-white leading-tight">Find Cabin 12049</h1>
-                <p className="text-sky-200 text-sm mt-1">MSC Musica · Deck 12 · 26 May 2026</p>
+                <h1 className="text-2xl font-black text-white leading-tight">Find Cabin 10142</h1>
+                <p className="text-sky-200 text-sm mt-1">MSC Musica · Deck 10 · 26 May 2026</p>
               </div>
               <Badge variant="green">Cruise Paid ✓</Badge>
             </div>
@@ -143,9 +143,9 @@ export function CabinNavigatorPage() {
             {/* Quick cabin pills */}
             <div className="flex flex-wrap gap-2 mt-4">
               {[
-                { label: '🛏️ Cabin 12049', color: 'bg-white/15' },
-                { label: '🏢 Deck 12', color: 'bg-white/15' },
-                { label: '📍 Muster C', color: 'bg-red-500/30' },
+                { label: '🛏️ Cabin 10142', color: 'bg-white/15' },
+                { label: '🏢 Deck 10', color: 'bg-white/15' },
+                { label: '📍 Muster F', color: 'bg-red-500/30' },
                 { label: '⏰ Check-in 14:00', color: 'bg-emerald-500/25' },
                 { label: '🍽️ Primo Turno', color: 'bg-violet-500/25' },
               ].map(p => (
